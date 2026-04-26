@@ -1,0 +1,17 @@
+#bodyContent p,
+#bodyContent li {
+    color: transparent !important;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.6) !important;
+    transition: all 0.3s ease-in-out;
+}
+
+#bodyContent p a:visited,
+#bodyContent li a:visited {
+    color: #0b0080 !important;
+}
+
+#bodyContent p.hypertext-revealed,
+#bodyContent li.hypertext-revealed {
+    color: #202122 !important;
+    text-shadow: none !important;
+}
