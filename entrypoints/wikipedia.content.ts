@@ -1,7 +1,8 @@
-import "./style.css"
+import "./style.css";
+import { MEDIA_WIKI_SITES } from "./sites-domains";
 
 export default defineContentScript({
-  matches: ["*://*.wikipedia.org/*"],
+  matches: MEDIA_WIKI_SITES.map((domain) => `*://${domain}/*`),
   main() {
     console.log("Hi wikipedia");
     const attachListener = () => {
