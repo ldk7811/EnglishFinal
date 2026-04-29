@@ -1,5 +1,5 @@
 import "./style.css";
-import { MEDIA_WIKI_SITES } from "./sites-domains";
+import { MEDIA_WIKI_SITES } from "../entrypoint_helper/sites-domains.ts";
 
 export default defineContentScript({
   matches: MEDIA_WIKI_SITES.map((domain) => `*://${domain}/*`),
