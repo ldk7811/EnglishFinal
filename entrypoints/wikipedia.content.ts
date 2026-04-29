@@ -17,19 +17,19 @@ export default defineContentScript({
     };
 
     const reveal = (e: Event) => {
-        const target = e.target as HTMLElement;
-        const parent = target.closest("p, li");
-        if (parent) {
-            document.querySelectorAll(".hypertext-revealed").forEach(el => {
-                el.classList.remove("hypertext-revealed");
-            });
-            parent.classList.add("hypertext-revealed")
-        }
-    }
+      const target = e.target as HTMLElement;
+      const parent = target.closest("p, li");
+      if (parent) {
+        document.querySelectorAll(".hypertext-revealed").forEach((el) => {
+          el.classList.remove("hypertext-revealed");
+        });
+        parent.classList.add("hypertext-revealed");
+      }
+    };
     if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", attachListener);
+      document.addEventListener("DOMContentLoaded", attachListener);
     } else {
-        attachListener();
+      attachListener();
     }
   },
 });
