@@ -11,9 +11,14 @@ export default defineContentScript({
     if (match) {
       const [r, g, b] = [+match[1], +match[2], +match[3]];
       const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+      const dark = luminance < 0.5;
       document.documentElement.style.setProperty(
         "--revealed-text-color",
-        luminance < 0.5 ? "#eaecf0" : "#202122",
+        dark ? "#eaecf0" : "#202122",
+      );
+      document.documentElement.style.setProperty(
+        "--obscured-glow-color",
+        dark ? "rgba(255, 255, 255, 0.6)" : "rgba(0, 0, 0, 0.6)",
       );
     }
 
