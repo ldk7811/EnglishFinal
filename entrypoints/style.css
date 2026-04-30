@@ -1,7 +1,7 @@
 #bodyContent p,
 #bodyContent li {
     color: transparent !important;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.6) !important;
+    text-shadow: 0 0 10px var(--obscured-glow-color, rgba(0, 0, 0, 0.6)) !important;
     transition: all 0.3s ease-in-out;
 }
 
@@ -12,6 +12,6 @@
 
 #bodyContent p.hypertext-revealed,
 #bodyContent li.hypertext-revealed {
-    color: #202122 !important;
+    color: var(--revealed-text-color, #202122) !important;
     text-shadow: none !important;
 }
