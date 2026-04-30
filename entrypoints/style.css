@@ -12,6 +12,6 @@
 
 #bodyContent p.hypertext-revealed,
 #bodyContent li.hypertext-revealed {
-    color: #202122 !important; /* here I want to add a conditional color that makes the revealed text white in case the original page was in dark mode instead of light mode, for example Wikipedia has a dark mode available! */
+    color: var(--revealed-text-color, #202122) !important;
     text-shadow: none !important;
 }
