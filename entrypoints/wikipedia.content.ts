@@ -1,8 +1,9 @@
 import "./style.css";
 import { MEDIA_WIKI_SITES } from "../entrypoint_helper/sites-domains.ts";
+import { WIKIMEDIA_SITES } from "../entrypoint_helper/wikimedia-domains.ts";
 
 export default defineContentScript({
-  matches: MEDIA_WIKI_SITES.map((domain) => `*://${domain}/*`),
+  matches: [...MEDIA_WIKI_SITES, ...WIKIMEDIA_SITES].map((domain) => `*://${domain}/*`),
   main() {
     console.log("Hi wikipedia");
 
